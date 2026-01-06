@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty & Derivatives: The Tai Po Incident</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #b91c1c; /* Fire Engine Red */
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --accent: #f59e0b;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), #7f1d1d);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; font-weight: 700; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 0.5rem; }
+        
+        .container {
+            max-width: 800px;
+            margin: -2rem auto 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        h2 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; color: var(--dark); margin-top: 2rem; }
+        
+        .incident-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--primary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .math-problem {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .diagram {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border: 1px dashed #ccc;
+            overflow-x: auto;
+        }
+
+        .reflection-section {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .form-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Calculus of Courage</h1>
+    <p>A Study on Duty, Risk, and Optimization</p>
+</header>
+
+<div class="container">
+
+    <h2>1. The Context: Tai Po Fire Incident </h2>
+    <div class="incident-box">
+        <p><strong>Incident Date:</strong> November 26, 2025</p>
+        <p>A massive No. 5 alarm fire engulfed Wang Fuk Court in Tai Po. Amidst the chaos of scaffolding ablaze and rapid smoke spread, firefighters faced the ultimate dilemma: the biological instinct for <em>self-preservation</em> versus the sworn <em>duty</em> to save lives. Tragically, a Senior Fireman gave his life during the operation.</p>
+        <p>In this task, we will explore how mathematical precision can optimize safety in dangerous environments, and reflect on the moral weight of the decisions first responders make.</p>
+    </div>
+
+    <h2>2. The Problem: Optimizing the Rescue Path</h2>
+    <div class="math-problem">
+        <p><strong>Scenario:</strong> A firefighter enters a burning apartment at the door (Point A). A trapped resident is unconscious on the balcony (Point B). The apartment is split into two zones:</p>
+        <ul>
+            <li><strong>Zone 1 (Clear):</strong> The first 4 meters (y = 0 to y = 4) are relatively clear. Speed \( v_1 = 2 \, \text{m/s} \).</li>
+            <li><strong>Zone 2 (Debris):</strong> The remaining distance (from y = 4 to y = 10) is filled with burning debris. Speed \( v_2 = 0.5 \, \text{m/s} \).</li>
+        </ul>
+        
+        <p><strong>Geometry:</strong></p>
+        <ul>
+            <li>Point \( A \) is at coordinate \( (0, 0) \).</li>
+            <li>The boundary between Zone 1 and Zone 2 is the line \( y = 4 \).</li>
+            <li>Point \( B \) (the victim) is at coordinate \( (10, 10) \).</li>
+            <li>The firefighter must choose a point \( P(x, 4) \) on the boundary to cross into the debris zone.</li>
+        </ul>
+
+        <div class="diagram">
+            <svg width="350" height="300" viewBox="0 0 350 300">
+                <defs>
+                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#eee" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                
+                <rect x="40" y="60" width="200" height="120" fill="#fee2e2" stroke="none" />
+                <text x="45" y="80" font-size="12" fill="#b91c1c" font-weight="bold">Zone 2 (Debris/Slow)</text>
+                
+                <rect x="40" y="180" width="200" height="80" fill="#e0f2fe" stroke="none" />
+                <text x="45" y="250" font-size="12" fill="#0369a1" font-weight="bold">Zone 1 (Clear/Fast)</text>
+
+                <line x1="40" y1="260" x2="280" y2="260" stroke="#333" stroke-width="2" /> <line x1="40" y1="260" x2="40" y2="20" stroke="#333" stroke-width="2" /> <line x1="40" y1="180" x2="260" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5"/>
+                <text x="265" y="185" font-size="12" fill="#f59e0b">y = 4</text>
+
+                <circle cx="40" cy="260" r="5" fill="green"/>
+                <text x="15" y="275" font-size="14" font-weight="bold">A(0,0)</text>
+
+                <circle cx="240" cy="60" r="5" fill="red"/>
+                <text x="250" y="65" font-size="14" font-weight="bold">B(10,10)</text>
+
+                <circle cx="160" cy="180" r="5" fill="black"/>
+                <text x="160" y="205" font-size="14" font-weight="bold">P(x,4)</text>
+
+                <line x1="40" y1="260" x2="160" y2="180" stroke="#333" stroke-width="2" stroke-dasharray="4"/>
+                <line x1="160" y1="180" x2="240" y2="60" stroke="#333" stroke-width="2" stroke-dasharray="4"/>
+                
+                <text x="80" y="230" font-size="12" fill="#555">d1</text>
+                <text x="210" y="130" font-size="12" fill="#555">d2</text>
+            </svg>
+            <p><em>Figure 1: Rescue path from Entry (A) to Balcony (B) crossing the boundary at P.</em></p>
+        </div>
+
+        <p><strong>Your Task:</strong></p>
+        <ol>
+            <li>Let \( T(x) \) be the total time taken to travel from \( A \) to \( B \) via point \( P(x, 4) \). Formulate the equation for \( T(x) \).</li>
+            <li>Use <strong>differentiation</strong> (First Derivative Test) to find the value of \( x \) that minimizes the time \( T \).</li>
+            <li>Calculate the minimum time required to reach the victim.</li>
+        </ol>
+    </div>
+
+    <h2>3. The Dilemma: Duty vs. Self-Preservation</h2>
+    <div class="reflection-section">
+        <p>In the problem above, you used calculus to minimize <em>exposure to danger</em> (Time). In real life, however, firefighters often enter zones where the "calculated risk" is extremely high, defying the instinct for self-preservation to fulfill their duty.</p>
+        <blockquote>
+            "Calculus can help us find the safest path, but it cannot explain <em>why</em> someone chooses to take the path at all."
+        </blockquote>
+        <p>Reflecting on the Tai Po fire and the loss of the firefighter, write a short response (50 words) discussing how society should balance the expectation of <strong>duty</strong> from our first responders against their right to <strong>self-preservation</strong>.</p>
+    </div>
+
+    <h2>4. Submission</h2>
+    <p>Please submit your mathematical solution (in PDF) and your written reflection using the Google Form in Google Classroom.</p>
+</div>
+
+<footer>
+    <p>Value Education & Mathematics Integration Project</p>
+</footer>
+
+</body>
+</html>
